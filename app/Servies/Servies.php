@@ -20,7 +20,13 @@ class Servies
 
     public function store($data)
     {
-        $item = $this->model->create($data);
+        $item = $this->model;
+        $fields=$this->getFields();
+        foreach($fields as $field)
+        {
+            $field->fill($item,$data);
+        }
+        $item->save();
         return $item;
     }
 
@@ -41,5 +47,10 @@ class Servies
     {
         $item=$this->find($id);
         $item->delete();
+    }
+
+    public function getFields()
+    {
+        return [];
     }
 }
