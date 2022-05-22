@@ -4,7 +4,7 @@ namespace App\Servies;
 
 use App\Models\Post;
 
-class PostServie extends Servies
+class PostService extends Servies
 {
     protected $modelClass=Post::class;
 }

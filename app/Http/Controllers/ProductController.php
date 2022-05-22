@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    protected $serviceClass=ProductService::class;
+    protected $serviesClass=ProductService::class;
     protected $storeRequestClass=ProductStoreRequest::class;
     protected $updateRequestClass=ProductUpdateRequest::class;
 }
