@@ -14,9 +14,12 @@ class TextField extends Field
     public function fill($item, $data)
     {
         $value = $data[$this->name];
-        $beforeSave=$this->beforSaveClouser;
-        //proccess
-        $value = $beforeSave($value);
+        if($this->beforSaveClouser) //yechim funksiy kutmasligini
+        {
+            $beforeSave=$this->beforSaveClouser;
+            //proccess
+            $value = $beforeSave($value);
+        }
         $item->{$this->name} = $value;
     }
 }
